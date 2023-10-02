@@ -2,8 +2,7 @@ import { createBrowserRouter, RouterProvider,Outlet } from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Videos from './pages/videos'
-import Home from './pages/Home'
+import { Home, Videos } from './pages'
 import VideoDetails from './components/VideoDetails'
 
 

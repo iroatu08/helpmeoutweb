@@ -50,7 +50,7 @@ const VideoDetails = () => {
         {
             loading ? (<Loader/>): videoDetail ? (
                 <video
-                src={videoDetail.videoUrl}
+                src={videoDetail}
                 autoPlay
                 muted
                 loop={true}
