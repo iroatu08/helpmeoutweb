@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Logo from "../assets/Logo.svg";
-import Profile from "../assets/Profile.svg";
+import Profile from "../assets/profile.svg";
 import Search from "../assets/search.svg";
 import VideoLink from "../assets/link.svg";
 import More from "../assets/more.svg";
