@@ -1,5 +1,5 @@
 import Home from "./Home";
-import Videos from "./Videos";
+import Videos from "./videos";
 
 
 export{
