@@ -4,7 +4,7 @@ import axios from "axios";
 import Loader from "../components/Loader";
 
 const VideoDetails = () => {
-  const { sessionId } = useParams();
+  const { _id } = useParams();
   const [videoDetail, setVideoDetail] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -17,8 +17,10 @@ const VideoDetails = () => {
   useEffect(() => {
     const getVideoDetails = async () => {
       try {
-        const url = `${import.meta.env.VITE_BASE_URL}/videos/${sessionId}/details`;
+        const url = `https://recorder-service.onrender.com/api/${_id}/details`
+        // const path = ``
         const response = await axios.get(url, options);
+        
 
         if (response.status === 200) {
           setVideoDetail(response.data);
@@ -32,7 +34,7 @@ const VideoDetails = () => {
       }
     };
     getVideoDetails();
-  }, [sessionId]);
+  }, [_id]);
 
   return (
     <div>
