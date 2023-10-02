@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Videos from './pages/videos'
 import Home from './pages/Home'
+import VideoDetails from './components/VideoDetails'
 
 
 const Layout = () => {
@@ -30,7 +31,12 @@ const router = createBrowserRouter([
   },
   {  path: '/videos',
   element: <Videos/>
-  }
+  },
+  {
+    path: '/video/:id',
+    element: <VideoDetails />
+
+  },
 ])
 
 
