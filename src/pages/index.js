@@ -1,8 +1,8 @@
 import Home from "./Home";
-import Videos from "./videos";
+import Recordings from "./Recordings";
 
 
 export{
     Home,
-    Videos
+    Recordings
 }

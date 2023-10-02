@@ -4,62 +4,65 @@ import axios from "axios";
 import Loader from "../components/Loader";
 
 const VideoDetails = () => {
-
-    const options = {
-        headers: {
-            "Content-Type": "video/webm",
-            "Access-Control-Allow-Origin": "*",
-          
-          },
-      };
+  const {id } = useParams();
+  const [videoDetail, setVideoDetail] = useState("");
+  const [loading, setLoading] = useState(true);
 
 
-    const { id } = useParams();
+  const options = {
+    headers: {
+        "Content-Type": "video/webm",
+        "Access-Control-Allow-Origin": "*",
+       
+      },
+  };
 
-    const [videoDetail, setVideoDetail] = useState({});
-    const [loading, setLoading] = useState();
+  useEffect(() => {
+    const getVideoDetails = async () => {
+      try {
+        const url = import.meta.env.VITE_BASE_URL;
+        const path = `/videos/${id}`;
+        const response = await axios.get(url + path, options);
 
-    useEffect(() => {
-        const getVideoDetails = async () =>{
-            setLoading(true);
-            try {
-                const url = import.meta.env.VITE_BASE_URL;
-                const path = `/videos/${id}`
-                const response = await axios.get(url + path, options);
-                console.log('Response:', response); 
-                const data = response.data;
-                setVideoDetail(data)
-                console.log(data);
-              }catch (error) {
-                console.error("Error fetching videos:", error);
-               
-              }finally{
-                setLoading(false);
-           
-    
-            }
-            
+        if (response.status === 200) {
+
+            setVideoDetail(response.data);
+            console.log(response.data);
+            // console.log(response.data.videoUrl);
+            // console.log(videoDetail);
+        } else {
+          console.error("Error fetching video:", response.status);
         }
-        getVideoDetails()
-    }, []);
+      } catch (error) {
+        console.error("Error fetching video:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getVideoDetails();
 
-    
+  }, [id, videoDetail]);
 
   return (
+    
     <div>
-        {
-            loading ? (<Loader/>): videoDetail ? (
-                <video
-                src={videoDetail}
-                autoPlay
-                muted
-                loop={true}
-                className="border border-[#E7E7ED] w-full rounded-[12px]"
-              ></video>
-            ) : (<p>Video not found</p>)
-        }
+      {loading ? (
+        <Loader />
+      ) : videoDetail ? (
+        <video
+          autoPlay
+          muted
+          src={videoDetail} 
+          loop={true}
+         
+          className="border border-[#E7E7ED]  rounded-[12px]"
+        >
+        </video>
+      ) : (
+        <p>Video not found</p>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default VideoDetails
+export default VideoDetails;
