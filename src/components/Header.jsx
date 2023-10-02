@@ -1,7 +1,10 @@
-
+import { Link } from "react-router-dom"
 const Header = () => {
   return (
-    <div>Header</div>
+    <div><ul>
+        <li><Link to="/videos">Click to Check Videos</Link></li>
+        
+        </ul></div>
   )
 }
 
