@@ -4,7 +4,7 @@ import axios from "axios";
 import Loader from "../components/Loader";
 
 const VideoDetails = () => {
-  const { _id } = useParams();
+  const { sessionId } = useParams();
   const [videoDetail, setVideoDetail] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -17,7 +17,7 @@ const VideoDetails = () => {
   useEffect(() => {
     const getVideoDetails = async () => {
       try {
-        const url = `https://recorder-service.onrender.com/api/${_id}/details`
+        const url = `https://recorder-service.onrender.com/api/${sessionId}/details`
         // const path = ``
         const response = await axios.get(url, options);
         
@@ -34,7 +34,7 @@ const VideoDetails = () => {
       }
     };
     getVideoDetails();
-  }, [_id]);
+  }, [sessionId]);
 
   return (
     <div>

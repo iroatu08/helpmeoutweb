@@ -5,8 +5,8 @@ import FeatureTwo from "../assets/easy.svg"
 import FeatureThree from "../assets/revisit.svg"
 import VideoRepo from "../assets/video.svg"
 import One from "../assets/one.svg"
-import Two from "../assets/one.svg"
-import Three from "../assets/one.svg"
+import Two from "../assets/two.svg"
+import Three from "../assets/three.svg"
 import Rec from "../assets/rec.svg"
 
 
