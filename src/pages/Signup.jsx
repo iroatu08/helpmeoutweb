@@ -1,4 +1,5 @@
-
+import Facebook from "../assets/Facebook svg.svg"
+import Google from "../assets/Google svg.svg"
 import Logo from "../assets/logo.svg"
 const Signup = () => {
   return (
@@ -25,7 +26,7 @@ const Signup = () => {
         
           className=" border border-[#141414] font-inter font-medium py-2 text-black h-[48px] rounded-xl w-full "
         >
-          <img src="/Google.svg" />
+          <img src={Google} />
           <p className=" pl-3">Continue with Google</p>
         </button>
 
@@ -33,7 +34,7 @@ const Signup = () => {
          
           className=" border border-[#141414] font-inter font-medium py-2 text-black h-[48px] rounded-xl w-full mt-[24px]"
         >
-          <img src="/Facebook.svg" />
+          <img src={Facebook} />
           <p className=" pl-3">Continue with Google</p>
         </button>
 

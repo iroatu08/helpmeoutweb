@@ -41,7 +41,7 @@ useEffect(() => {
             } else {
                 setError("No videos found.");
             }
-            console.log(data);
+          
           }catch (error) {
             console.error("Error fetching videos:", error);
             setError("An error occurred while fetching videos. Check the ngrok URL and CORS settings.");
@@ -98,7 +98,7 @@ useEffect(() => {
                         {
                            Array.isArray(videos) && videos.map((video, index) => (
                                 <>
-                                <Link to={`/videos/${video.sessionId}`} key={index}>
+                                <Link to={`/videos/${video.sessionId}/details`} key={index}>
                                 <div key={index} className="w-[557px] border border-[#E7E7ED] px-[16px] py-[16px] pb-[24px] flex flex-col gap-[24px] rounded-[24px]">
                                 <video
                                   src={video.videoUrl}
