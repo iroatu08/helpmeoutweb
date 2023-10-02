@@ -8,6 +8,7 @@ import More from "../assets/more.svg";
 import Loader from "../components/Loader";
 import axios from 'axios'
 import moment from "moment"
+import { Link } from "react-router-dom";
 
 const Videos = () => {
 const [videos, setVideos] = useState([]);
@@ -99,7 +100,8 @@ useEffect(() => {
                     {
                        Array.isArray(videos) && videos.map((video, index) => (
                             <>
-                              <div key={index} className="w-[557px] border border-[#E7E7ED] px-[16px] py-[16px] pb-[24px] flex flex-col gap-[24px] rounded-[24px]">
+                            <Link to={`/videos/${video.sessionId}`}>
+                            <div key={index} className="w-[557px] border border-[#E7E7ED] px-[16px] py-[16px] pb-[24px] flex flex-col gap-[24px] rounded-[24px]">
                             <video
                               src={video.videoUrl}
                               autoPlay
@@ -127,6 +129,8 @@ useEffect(() => {
                 
                 
                           </div>
+                            </Link>
+                            
                             </>
                           
                         ))
