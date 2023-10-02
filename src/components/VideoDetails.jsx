@@ -4,62 +4,52 @@ import axios from "axios";
 import Loader from "../components/Loader";
 
 const VideoDetails = () => {
-  const {id } = useParams();
-  const [videoDetail, setVideoDetail] = useState("");
+  const { sessionId } = useParams();
+  const [videoDetail, setVideoDetail] = useState({});
   const [loading, setLoading] = useState(true);
-
 
   const options = {
     headers: {
-        "Content-Type": "video/webm",
-        "Access-Control-Allow-Origin": "*",
-       
-      },
+      "Content-Type": "application/json",
+    },
   };
 
   useEffect(() => {
     const getVideoDetails = async () => {
       try {
-        const url = import.meta.env.VITE_BASE_URL;
-        const path = `/videos/${id}`;
-        const response = await axios.get(url + path, options);
+        const url = `${import.meta.env.VITE_BASE_URL}/videos/${sessionId}/details`;
+        const response = await axios.get(url, options);
 
         if (response.status === 200) {
-
-            setVideoDetail(response.data);
-            console.log(response.data);
-            // console.log(response.data.videoUrl);
-            // console.log(videoDetail);
+          setVideoDetail(response.data);
         } else {
-          console.error("Error fetching video:", response.status);
+          console.error("Error fetching video details:", response.status);
         }
       } catch (error) {
-        console.error("Error fetching video:", error);
+        console.error("Error fetching video details:", error);
       } finally {
         setLoading(false);
       }
     };
     getVideoDetails();
-
-  }, [id, videoDetail]);
+  }, [sessionId]);
 
   return (
-    
     <div>
       {loading ? (
         <Loader />
       ) : videoDetail ? (
-        <video
-          autoPlay
-          muted
-          src={videoDetail} 
-          loop={true}
-         
-          className="border border-[#E7E7ED]  rounded-[12px]"
-        >
-        </video>
+        <div>
+          <h1>Video Details</h1>
+          <p>Session ID: {videoDetail.sessionId}</p>
+          <p>Date Created: {videoDetail.dateCreated}</p>
+          <p>MIME Type: {videoDetail.mimeType}</p>
+          <p>Transcriptions: {videoDetail.transcriptions || "Not available"}</p>
+          <p>File Size: {videoDetail.fileSize || "Not available"}</p>
+          <p>Video URL: <a href={videoDetail.videoUrl}>{videoDetail.videoUrl}</a></p>
+        </div>
       ) : (
-        <p>Video not found</p>
+        <p>Video details not found</p>
       )}
     </div>
   );

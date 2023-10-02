@@ -19,7 +19,7 @@ const options = {
     headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        "Ngrok-Trace-Id" : "d414053fbf0562b693b75c90fbb249e7"
+ 
       },
   };
 
@@ -98,7 +98,7 @@ useEffect(() => {
                         {
                            Array.isArray(videos) && videos.map((video, index) => (
                                 <>
-                                <Link to={`/videos/${video.sessionId}`}>
+                                <Link to={`/videos/${video.sessionId}`} key={index}>
                                 <div key={index} className="w-[557px] border border-[#E7E7ED] px-[16px] py-[16px] pb-[24px] flex flex-col gap-[24px] rounded-[24px]">
                                 <video
                                   src={video.videoUrl}
