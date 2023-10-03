@@ -120,6 +120,7 @@ const VideoDetails = () => {
                                   autoPlay
                                   muted
                                   loop={true}
+                                  controls
                                   className="border border-[#E7E7ED] w-full rounded-[12px]"
                                 ></video>
                     
