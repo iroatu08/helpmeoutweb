@@ -4,14 +4,12 @@
 
 ### Helpful Links
 
--View all videos
+-View all recordings
 
   - [https://main--cerulean-pika-ddd92d.netlify.app/recordings](https://main--cerulean-pika-ddd92d.netlify.app/recordings)
 
 - View a specific video
-  - [https://main--cerulean-pika-ddd92d.netlify.app/videos/sessionId/details](https://main--cerulean-pika-ddd92d.netlify.app/videos/sessionId/details)
-    > If the video dont exists, a 404 video animation would be played.
-
+  - [https://main--cerulean-pika-ddd92d.netlify.app/videos/sessionId/details](https://main--cerulean-pika-ddd92d.netlify.app/videos/sessionId/details) 
 ## Extension
 
 To use the extension, download it from the link below:
