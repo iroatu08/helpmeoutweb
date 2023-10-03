@@ -25,16 +25,15 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home/>
       },
-   
+      {
+        path: '/videos/:sessionId/details',
+        element: <VideoDetails />
+    
+      },
     ]
   },
   {  path: '/recordings',
   element: <Recordings/>
-  },
-  {
-    path: '/videos/:sessionId/details',
-    element: <VideoDetails />
-
   },
   {
     path: '/signup',

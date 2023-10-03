@@ -3,6 +3,10 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
+import Facebook from "../assets/Facebook svg.svg"
+import Whatsapp from "../assets/whatsapp.svg"
+import Telegram from "../assets/telegram.svg"
+import Edit from "../assets/edit.svg"
 
 const VideoDetails = () => {
   const { sessionId } = useParams();
@@ -45,16 +49,16 @@ const VideoDetails = () => {
       ) : videoDetail ? (
        <>
         <div className=" md:flex px-[20px] md:px[50px] lg:px-[70px] xl:px-[100px] min-h-[80dvh] py-10">
-        <div className=" w-full md:w-1/2">
-          <p className=" font-sora font-bold text-4xl">Your video is ready</p>
+        <div className=" w-full md:w-1/2 flex flex-col items-start gap-[64px] mb-40">
+          <p className=" sora font-bold text-4xl text-[#141414] text-[45px] ">Your video is ready</p>
 
-          <div className="py-16">
-            <p className=" font-medium pb-[12px] text-[#727272]">{videoDetail.sessionId}</p>
-            <input
-              type="text"
-              
-              className=" w-full outline-none rounded-xl font-sora text-2xl font-semibold"
-            />
+          <div className="">
+            <span className="text-[#727272] text-[16px]">Name</span>
+            <div className="flex items-center gap-[8px] w-full">
+            <p className=" font-[600] text-[24px] sora  text-[#413C6D]">{videoDetail.sessionId}</p>
+            <img src={Edit} alt="" />
+            </div>
+           
           </div>
 
           <div className=" relative w-full">
@@ -63,22 +67,22 @@ const VideoDetails = () => {
               
 
               placeholder="Enter email of receiver"
-              className=" w-full bg-[#B6B3C633] outline-none pl-3 rounded-xl h-[68px] font-workSans font-medium relative"
+              className=" w-full bg-[#B6B3C633] outline-none pl-3 rounded-xl h-[68px] worksans font-medium relative"
             />
             <button className=" absolute bg-[#605C84] outline-none text-white px-5 py-3 rounded-lg right-[10px] top-[10px] ">
               Send
             </button>
           </div>
 
-          <div className=" pt-16">
-            <p className=" font-semibold pb-[12px] font-sora">Video URL</p>
-            <div className=" relative">
+          <div className="w-full flex items-start flex-col gap-[16px]">
+            <p className=" font-[600] text-[#141414] text-[20px] sora">Video URL</p>
+            <div className=" relative w-full">
               <input
                 type="email"
               
 
                 placeholder="Enter your email address"
-                className=" w-full border bg-[#FAFAFA] border-[#929292] outline-none pl-3 rounded-xl h-[68px] font-workSans font-medium relative"
+                className=" w-full border bg-[#FAFAFA] border-[#929292] outline-none pl-3 rounded-xl h-[68px] worksans font-medium relative"
               />
               <button className=" absolute outline-none border border-[#120B48] text-[#120B48] px-2 py-3 rounded-lg right-[10px] top-[10px] flex items-center gap-2">
               
@@ -87,21 +91,21 @@ const VideoDetails = () => {
             </div>
           </div>
 
-          <div className=" pt-10">
+          <div className="">
             <p className=" font-semibold pb-[12px] font-sora">
               Share your video
             </p>
             <div className=" flex flex-col lg:flex-row gap-3">
               <button className=" flex border border-[#0A0628] outline-none py-2 px-3 rounded-md gap-2">
-                <img src="/Facebook.svg" alt="" />
+                <img src={Facebook} alt="" />
                 Facebook
               </button>
               <button className=" flex border border-[#0A0628] outline-none p-2 rounded-md gap-2">
-                <img src="/whatsapp.svg" alt="" />
+                <img src={Whatsapp} alt="" />
                 Whatsapp
               </button>
               <button className=" flex border border-[#0A0628] outline-none p-2 rounded-md gap-2">
-                <img src="/telegram.svg" alt="" />
+                <img src={Telegram} alt="" />
                 Telegram
               </button>
             </div>
@@ -217,19 +221,19 @@ const VideoDetails = () => {
       </div>
 
       <section className="px-[347px] py-[48px] bg-[#f4f6f8] ">
-        <div className="grid gap-4 font-sora font-bold text-base text-center md:mx-auto md:py-8 xl:text-[2.4rem]">
+        <div className="flex items-center flex-col gap-[40px] text-center">
           <p className=" text-[#141414] sora text-[24px] font-[600]">
             To ensure the availability and privacy of your video, we recommend
             saving it to your account.
           </p>
 
-          <button className=" px-[32px] py-[16px] mx-auto bg-[#120B48] rounded-[1.2rem] work-sans font-normal text-white xl:text-sm">
+          <button className=" px-[32px] py-[16px] mx-auto bg-[#120B48] rounded-[8px] worksans  text-white xl:text-[16px]">
             Save video
           </button>
 
-          <div className="flex justify-center gap-2">
-            <p className="text-[#7E7E7E]">Don&apos;t have an account?</p>
-            <Link href="/signup" className="underline">
+          <div className="flex items-center justify-center gap-2">
+            <p className="text-[#7E7E7E] sora text-[24px] font-[600]">Don&apos;t have an account?</p>
+            <Link href="/signup" className="underline text-[#120b48] text-[24px] font-[600]">
               Create account
             </Link>
           </div>
