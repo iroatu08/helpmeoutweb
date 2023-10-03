@@ -17,13 +17,14 @@ const VideoDetails = () => {
   useEffect(() => {
     const getVideoDetails = async () => {
       try {
-        const url = `https://recorder-service.onrender.com/api/${sessionId}/details`
+        const url = `https://recorder-service.onrender.com/api/videos/${sessionId}/details`
         // const path = ``
         const response = await axios.get(url, options);
         
 
         if (response.status === 200) {
-          setVideoDetail(response.data);
+          setVideoDetail(response.data.data);
+          console.log(response)
         } else {
           console.error("Error fetching video details:", response.status);
         }
@@ -41,15 +42,13 @@ const VideoDetails = () => {
       {loading ? (
         <Loader />
       ) : videoDetail ? (
-        <div>
-          <h1>Video Details</h1>
-          <p>Session ID: {videoDetail.sessionId}</p>
-          <p>Date Created: {videoDetail.dateCreated}</p>
-          <p>MIME Type: {videoDetail.mimeType}</p>
-          <p>Transcriptions: {videoDetail.transcriptions || "Not available"}</p>
-          <p>File Size: {videoDetail.fileSize || "Not available"}</p>
-          <p>Video URL: <a href={videoDetail.videoUrl}>{videoDetail.videoUrl}</a></p>
-        </div>
+        <video
+        src={videoDetail.videoUrl}
+        autoPlay
+        muted
+        loop={true}
+        className="border border-[#E7E7ED] rounded-[12px]"
+      ></video>
       ) : (
         <p>Video details not found</p>
       )}

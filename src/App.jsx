@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   element: <Recordings/>
   },
   {
-    path: '/videos/:id',
+    path: '/videos/:sessionId/details',
     element: <VideoDetails />
 
   },
