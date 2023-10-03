@@ -44,10 +44,14 @@ const Home = () => {
             Help your friends and loved ones by creating and sending videos on
             how to get things done on a website.
           </p>
+
+          <a href="https://drive.google.com/file/d/1qev3AM6QVdKDZBr7JzzscF78QLM5625R/view?usp=sharing" target="_blank" rel="noreferrer" download >
           <button className=" bg-[#120B48] py-5 px-6 flex text-white rounded-lg gap-2 mt-10">
             <p>Install HelpMeOut</p>
             <img src={ArrowRight}/>
           </button>
+          </a>
+        
         </div>
 
         <div className=" w-full lg:w-1/2 mt-12 lg:mt-0">
