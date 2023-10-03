@@ -22,9 +22,9 @@ const VideoDetails = () => {
   useEffect(() => {
     const getVideoDetails = async () => {
       try {
-        const url = `https://recorder-service.onrender.com/api/videos/${sessionId}/details`
-        // const path = ``
-        const response = await axios.get(url, options);
+        const url = import.meta.env.VITE_BASE_URL 
+        const path = '/videos/${sessionId}/details'
+        const response = await axios.get(url + path, options);
         
 
         if (response.status === 200) {

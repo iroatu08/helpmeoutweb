@@ -1,8 +1,18 @@
-# React + Vite
+# HelpMeOut
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Web Url](ttps://main--cerulean-pika-ddd92d.netlify.app)
 
-Currently, two official plugins are available:
+### Helpful Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-View all videos
+
+  - [https://main--cerulean-pika-ddd92d.netlify.app/recordings](https://main--cerulean-pika-ddd92d.netlify.app/recordings)
+
+- View a specific video
+  - [https://main--cerulean-pika-ddd92d.netlify.app/videos/sessionId/details](https://main--cerulean-pika-ddd92d.netlify.app/videos/sessionId/details)
+    > If the video dont exists, a 404 video animation would be played.
+
+## Extension
+
+To use the extension, download it from the link below:
+[Extension release link](https://drive.google.com/file/d/1qev3AM6QVdKDZBr7JzzscF78QLM5625R/view?usp=sharing)
